@@ -4,14 +4,17 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose version
 
-
-
 ------------------------------LATEST----------------------------------------------------
 mkdir -p ~/.docker/cli-plugins/
-
 curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 \
   -o ~/.docker/cli-plugins/docker-compose
-
 chmod +x ~/.docker/cli-plugins/docker-compose
 
 docker compose version
+-------------------------------------------------------ALTERNATIVE OPTION-------------------------------------------------
+
+curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 \
+-o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
