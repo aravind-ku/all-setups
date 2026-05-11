@@ -1,0 +1,17 @@
+----------------------------Docker Compose commands--------------------------------------------------------
+mkdir -p ~/.docker/cli-plugins/
+curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 \
+  -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+docker compose version
+
+---------------------------------Docker swarm--------------------------------------------------------
+docker swarm init 
+
+--------------------------------Docker Portainer-------------------------------------
+curl -L https://downloads.portainer.io/ce2-16/portainer-agent-stack.yml -o portainer-agent-stack.yml
+docker stack deploy -c portainer-agent-stack.yml portainer
+docker service ls
+docker ps
+
+http://<MASTER-IP>:9000
