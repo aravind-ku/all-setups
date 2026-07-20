@@ -10,7 +10,7 @@ sudo mv nexus-3.91.1-04 nexus
 sudo adduser nexus
 sudo chown -R nexus:nexus /app/nexus
 sudo chown -R nexus:nexus /app/sonatype-work
-sudo echo run_as_user="nexus" > /app/nexus/bin/nexus.rc
+sudo echo run_as_user="nexus" > /app/nexus/bin/nexus
 sudo tee /etc/systemd/system/nexus.service > /dev/null << EOL
 [Unit]
 Description=nexus service
