@@ -1,3 +1,35 @@
+------------------------->master Node<--------------------------------
+-----------------------------
+sudo dnf install ansible -y
+yum install python-pip -y
+ssh-keygen    (press enter 3 times)
+passwd root        (set the password for root)
+vim /etc/ssh/sshd_config (uncomment: 40 , no=yes: 65)
+systemctl restart sshd
+systemctl status sshd
+
+vim /etc/ansible/hosts
+---------------------
+[dev]
+slave private IP (172.31.81.244)
+[test]
+slave private IP (172.31.81.244)
+[prod]
+slave private IP (172.31.81.244)
+-----------------------
+vim /etc/ansible/ansible.config
+(default)
+inventry = /etc/ansible/hosts
+--------------------------------
+ssh-copy-id root@private_ip of slave servers
+
+--------->slave installation:<-------------------------
+------------------------------
+passwd root        (set the password for root)
+vim /etc/ssh/sshd_config (uncomment: 40 , no=yes: 65)
+systemctl restart sshd
+--------------------------------------------------------------------------------------------||||------------------------------------------
+
 SETUP:
 Create 5 servers (1=ansible 2=dev 2=test)
 Connect all servers to mobaxterm
